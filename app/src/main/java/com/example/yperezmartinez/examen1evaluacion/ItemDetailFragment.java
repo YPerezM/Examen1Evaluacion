@@ -65,8 +65,23 @@ public class ItemDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.details);
             //Definimos un nuevo boton, que sera el añadido al layout(R.id.button)
             Button button = (Button) rootView.findViewById(R.id.button);
-        }
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ItemListFragment fragment = (ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list);
+                //Condicional para saber si esta en el detail y hacer un finish(if). En caso de estar el el modo apaisado, se pondra el mensaje vacio(else)
+                    if (fragment == null || isInLayout()) {
+                        //Finaliza la Activity para volver a la list, ocurrira en modo portrait
+                        getActivity().finish();
+                    } else {
+                        //Pone el mensaje vacio(ocurrira en modo land
+                        ((TextView) rootView.findViewById(R.id.item_detail)).setText("");
+                    }
+                }
 
+
+            });
+        }
         return rootView;
     }
 }
