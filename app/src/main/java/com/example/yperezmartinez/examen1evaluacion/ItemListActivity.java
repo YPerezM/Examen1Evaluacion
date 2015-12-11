@@ -96,9 +96,9 @@ public class ItemListActivity extends AppCompatActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             startActivityForResult(detailIntent, 1);
         }
-
+    //Condicional para saber si esta tumbado desde la variable bool definida en config.xml
         if (getResources().getBoolean(R.bool.dual_pane)) {
-            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tumbado", Toast.LENGTH_LONG).show();
         } else {
 
         }
@@ -108,7 +108,7 @@ public class ItemListActivity extends AppCompatActivity
             if (requestCode == 1){
                 if (resultCode == Activity.RESULT_OK){
                     //Mensaje para saber si has salido del activity
-                    Toast.makeText(getBaseContext(), "Activity Cerrada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Activity cerrada", Toast.LENGTH_LONG).show();
 
 
                 }
