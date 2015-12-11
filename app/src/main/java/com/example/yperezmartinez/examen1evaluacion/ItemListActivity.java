@@ -94,9 +94,14 @@ public class ItemListActivity extends AppCompatActivity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, ItemDetailActivity.class);
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
-            startActivityForResult(detailIntent,1);
+            startActivityForResult(detailIntent, 1);
+        }
+
+        if(getResources().getBoolean(R.bool.dual_pane)){
+            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
+        }else{
+
         }
     }
-
 
 }
