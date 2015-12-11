@@ -97,11 +97,24 @@ public class ItemListActivity extends AppCompatActivity
             startActivityForResult(detailIntent, 1);
         }
 
-        if(getResources().getBoolean(R.bool.dual_pane)){
+        if (getResources().getBoolean(R.bool.dual_pane)) {
             Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
 
         }
     }
+        @Override
+        public  void onActivityResult(int requestCode, int resultCode, Intent data) {
+            if (requestCode == 1){
+                if (resultCode == Activity.RESULT_OK){
+                    //Mensaje para saber si has salido del activity
+                    Toast.makeText(getBaseContext(), "Activity Cerrada", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }
+        }
+
+
 
 }
