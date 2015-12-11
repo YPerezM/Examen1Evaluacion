@@ -1,5 +1,28 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/item_detail"
-    style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp" android:textIsSelectable="true"
-    tools:context=".ItemDetailFragment" />
+<!--Creacion de un LinearLayout para almacenar dentro un TextView con los detalles y el boton que cierre la activity -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!--TextView situado a la izquierda de el layout. Nombre =item_detail -->
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/item_detail"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="156dp"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:textIsSelectable="true"
+        tools:context=".ItemDetailFragment"
+        android:layout_above="@+id/button" />
+    <!--Boton a la derecha de los detalles para poder cerrar el activity.Nombre=button-->
+    <Button
+        android:layout_width="220dp"
+        android:layout_height="75dp"
+        android:text="Cerrar"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+</LinearLayout>
